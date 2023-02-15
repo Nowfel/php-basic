@@ -24,14 +24,14 @@
             ],
 
             [
-                'name' => 131,
+                'name' => 'Interstellar',
                 'releaseYear' => 2014,
             ],
         ];
 
-       
+        
         $filteredBooks = array_filter($movies, function ($movie) {
-            return $movie['name'] != 'Back to the Future';
+            return $movie['releaseYear'] < 2014;
         });
     ?>
 
