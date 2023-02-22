@@ -71,6 +71,10 @@
                 <?php } ?>
             </tbody>
         </table>
+
+        <!-- <?php foreach ($students as $student) {
+           echo "<li>".$student['std_name']."</li>";
+        } ?> -->
     </div>
 
   

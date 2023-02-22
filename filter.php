@@ -88,24 +88,28 @@
 
       
   
-        function filterByRecent($movies)
-        {
-            $filteredMovies = [];
-            foreach ($movies as $movie) {
-                if ($movie['releaseYear'] >= 2000) {
-                    $filteredMovies[] = $movie;
-                    // echo $movie['name']."<br>";
-                    // echo $filteredMovies[0]['releaseYear'];
+        // function filterByRecent($movies)
+        // {
+        //     $filteredMovies = [];
+        //     foreach ($movies as $movie) {
+        //         if ($movie['releaseYear'] >= 2000) {
+        //             $filteredMovies[] = $movie;
+        //             // echo $movie['name']."<br>";
+        //             // echo $filteredMovies[0]['releaseYear'];
 
-                }
-            }
+        //         }
+        //     }
 
-            return $filteredMovies;
-        }
+        //     return $filteredMovies;
+        // }
+
+        $filteredBooks = array_filter($movies, function ($movie) {
+            return $movie['name'] != 'Bac to the Future';
+        });
     ?>
 
     <ul>
-        <?php foreach (filterByRecent($movies) as $movie) : ?>
+        <?php foreach ( $filteredBooks as $movie) : ?>
             <li>
                 <?= $movie['name'] ?>
             </li>
