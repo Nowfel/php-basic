@@ -1,5 +1,5 @@
 <?php 
-class Person {
+class User {
     public $firstName;
     public $lastName;
     public $salary;
@@ -16,8 +16,22 @@ class Person {
     
 }
 
-$heroPerson = new Person('hasan', 'sakib', 20000);
-var_dump($heroPerson);
-echo $heroPerson->getName();
+class employee extends User {
+    public function __construct($name, $email, $password, $title) {
+      parent::__construct($name, $email, $password);
+      $this->title = $title;
+    }
+  
+    public function getTitle() {
+      return $this->title;
+    }
+  }
+  
+  $employee1 = new employee('John','sak@gmail.com','123456','Manager');
+  echo $employee1->getTitle();
+  var_dump($employee1);
+
+// $heroPerson = new Person('Heroo', 'Balam', 20000);
+// echo $heroPerson->getName();
 
 ?>
